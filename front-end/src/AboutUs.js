@@ -11,9 +11,12 @@ const AboutUs = props => {
     <div>
       <h2>About Us</h2>
       <p>Hello! My name is Anita Ye and I am a senior majoring in math/cs.</p>
-      <p>Insert more information about yourself here.</p>
       {/* Add your photo here */}
-      <img src="path_to_your_photo.jpg" alt="Your Photo" />
+      <img src="/AboutUsPicture.jpeg" alt="AboutUsPicture"
+      style = {{
+        width: '300px',
+        height: 'auto'
+      }} />
     </div>
   )
 }
