@@ -21,6 +21,7 @@ mongoose
 // load the dataabase models we want to deal with
 const { Message } = require('./models/Message')
 const { User } = require('./models/User')
+const { AboutUs } = require('./models/AboutUs');
 
 // a route to handle fetching all messages
 app.get('/messages', async (req, res) => {
@@ -77,6 +78,21 @@ app.post('/messages/save', async (req, res) => {
     })
   }
 })
+
+app.get('/about', async (req, res) => {
+  try {
+    console.log('try')
+    const aboutUsData = {
+      about: 'Hello! My name is Anita Ye and I am a senior majoring in math/cs',
+      pictureUrl: 'http://localhost:7002/AboutUsPicture.jpeg'
+    };
+    res.json(aboutUsData);
+  } catch (error) {
+    console.log('catch')
+    console.error('Error fetching About Us data:', error);
+    res.status(500).json({ message: 'Server Error' });
+  }
+});
 
 // export the express app we created to make it available to other modules
 module.exports = app // CommonJS export style!
